@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+두 수 사이의 가장 큰 소수를 구하시오.<br>
+<input id="num1" type="text"> ~ <input id="num2" type="text">
+<button onclick="calculate();">구하기</button> <br>
+<input id="result" type="text">
+
+<script>
+  function calculate() {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    primeNumber(Number(num1), Number(num2));
+  }
+
+  function primeNumber(num1, num2) {
+     for(i=num1+1;i<num2;i++){
+        isPrime = 1;
+        for(j=2;j<i;j++){
+            if(i%j==0){
+                isPrime = 0;
+                break;
+            }
+        }
+        if(isPrime){
+            max=i;
+        }
+     }
+
+	  document.write(a+"와 "+b+"사이의 최대 소수는 "+max+"이다.");
+
+    // 계산하기
+    var primeNumber = num1 + num2;
+    document.getElementById("result").value = primeNumber;
+  }
+</script>
+</body>
+</html>

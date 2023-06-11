@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자리배치 프로그램</title>
+    <style>
+    .seat1 {
+        width: 100px;
+        height: 50px;
+        background-color: gray;
+        margin: 2px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+      }  
+    .seat2 { 
+        width: 100px;
+        height: 50px;
+        background-color: lightgray;
+        margin: 2px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+      } 
+    .selected {
+        background-color: green   
+    }
+    </style>
+    <script>
+        
+        function toggleSeat(seat) {
+          seat.classList.toggle("selected");
+        }
+        function updateSeatText() {
+            var nam1Value = document.getElementById("nam1").value;
+            var nam2Value = document.getElementById("nam2").value;
+
+            var seat1Elements = document.getElementsByClassName("seat1");
+            var seat2Elements = document.getElementsByClassName("seat2");
+
+            var nam1Array = nam1Value.split(",");
+            var nam2Array = nam2Value.split(",");
+
+            nam1Array = shuffleArray(nam1Array);
+            nam2Array = shuffleArray(nam2Array);
+
+            for (var i = 0; i < seat1Elements.length; i++) {
+                seat1Elements[i].textContent = nam1Array[i];
+            }
+
+            for (var i = 0; i < seat2Elements.length; i++) {
+                seat2Elements[i].textContent = nam2Array[i];
+            }
+        }
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+    </script> 
+
+</head>
+<body>
+    <h1>자리배치 프로그램</h1>
+
+    <!--<button onclick="shuffleAndSplitData(data)">두 그룹으로 나누기</button>-->
+    
+    <h3>자료 : </h3>
+    <p> 강원준, 김건우, 김서윤, 김연진, 김윤진, 김은우, 김창우, 도소윤, 문승언, 박지안, 손이현, 심지호, 윤은빈, 이서윤, 이서준, 이송윤, 이수호, 이예나, 임지우, 장유정, 전현수, 정은재, 정현서, 조시현, 최수연, 최현태, 추서윤, 한지윤</p>
+
+    <p>A1~A14 : <input id="nam1" type="text"></p>
+    <p>B1~B14 : <input id="nam2" type="text"></p>
+
+    <button onclick="updateSeatText()">자리배치</button>
+
+    <br>
+    <div class="seat1">A1</div>  <!--onclick="toggleSeat(this)" 이것도 가끔 사용됨-->
+    <div class="seat2">B2</div>
+    <div class="seat2">B6</div>
+    <div class="seat2">B10</div>
+    <div class="seat1">A12</div>
+    <br>
+    <div class="seat1">A2</div>
+    <div class="seat2">B3</div>
+    <div class="seat2">B7</div>
+    <div class="seat2">B11</div>
+    <div class="seat1">A13</div>
+    <br>
+    <div class="seat1">A3</div>
+    <div class="seat2">B4</div>
+    <div class="seat2">B8</div>
+    <div class="seat2">B12</div>
+    <div class="seat1">A14</div>
+    <br>
+    <div class="seat2">B1</div>
+    <div class="seat2">B5</div>
+    <div class="seat2">B9</div>
+    <div class="seat2">B13</div>
+    <div class="seat2">B14</div>
+    <br>
+    <div class="seat1">A4</div>
+    <div class="seat1">A6</div>
+    <div class="seat1">A8</div>
+    <div class="seat1">A10</div>
+    <br>
+    <div class="seat1">A5</div>
+    <div class="seat1">A7</div>
+    <div class="seat1">A9</div>
+    <div class="seat1">A11</div>
+    
+</body>
+</html>

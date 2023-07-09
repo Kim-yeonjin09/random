@@ -67,12 +67,12 @@
 
             var seat3Elements = document.getElementsByClassName("seat3");
 
-            var nam3Array = nam1Value.split(",");
+            var nam3Array = nam3Value.split(",");
 
             nam3Array = shuffleArray(nam3Array);
 
-            for (var i = 0; i < seat1Elements.length; i++) {
-                seat1Elements[i].textContent = nam3Array[i];
+            for (var i = 0; i < seat3Elements.length; i++) {
+                seat3Elements[i].textContent = nam3Array[i];
             }
         }
         function shuffleArray(array) {

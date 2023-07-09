@@ -62,6 +62,19 @@
                 seat2Elements[i].textContent = nam2Array[i];
             }
         }
+        function updateSeatText2() {
+            var nam3Value = document.getElementById("nam3").value;
+
+            var seat3Elements = document.getElementsByClassName("seat3");
+
+            var nam3Array = nam1Value.split(",");
+
+            nam3Array = shuffleArray(nam3Array);
+
+            for (var i = 0; i < seat1Elements.length; i++) {
+                seat1Elements[i].textContent = nam3Array[i];
+            }
+        }
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -124,7 +137,7 @@
     <h3>============================================</h3>
     
     <p>명단 : <input id="nam1" type="text"></p>
-    <button onclick="updateSeatText()">자리배치</button>
+    <button onclick="updateSeatText2()">자리배치</button>
 
     <br>
     <div class="seat3">1</div>  <!--onclick="toggleSeat(this)" 이것도 가끔 사용됨-->

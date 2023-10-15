@@ -109,7 +109,7 @@
         }
         function countdown2(callback) {
             var count = 3; // 시작 카운트다운 값
-            var countdownElement = document.getElementById("countdown");
+            var countdownElement = document.getElementById("countdown2");
 
             var timer = setInterval(function() {
                 countdownElement.textContent = count;
@@ -122,8 +122,8 @@
             }, 1000);
         }
         function checkCheckbox2() {
-            var checkbox = document.getElementById("myCheckbox");
-            var resultElement = document.getElementById("result");
+            var checkbox = document.getElementById("myCheckbox2");
+            var resultElement = document.getElementById("result2");
     
             if (checkbox.checked) {
                 countdown(updateSeatText2)
@@ -194,7 +194,7 @@
     <p>명단 : <input id="nam3" type="text"></p>
     <p id="countdown2"></p>
 
-    <input type="checkbox" id="myCheckbox"> 카운트 다운
+    <input type="checkbox" id="myCheckbox2"> 카운트 다운
     <p id="result2"></p>
     
     <button onclick="checkCheckbox2()">자리배치</button>

@@ -45,7 +45,7 @@
             var nam1Value = document.getElementById("nam1").value;
             var nam2Value = document.getElementById("nam2").value;
 
-              var seat1Elements = document.getElementsByClassName("seat1");
+            var seat1Elements = document.getElementsByClassName("seat1");
             var seat2Elements = document.getElementsByClassName("seat2");
 
             var nam1Array = nam1Value.split(",");
@@ -115,9 +115,37 @@
                 countdownElement.textContent = count;
                 count--;
 
-                if (count <윤</p>-
+                if (count < 0) {
+                clearInterval(timer);
+                callback()
+                 }
+            }, 1000);
+        }
+        function checkCheckbox2() {
+            var checkbox = document.getElementById("myCheckbox2");
+            var resultElement = document.getElementById("result2");
 
-    <p>A1~A13 : <input id="nam1" type="text"></p>
+            if (checkbox2.checked) {
+                countdown(updateSeatText2)
+
+            } else {
+                updateSeatText2()
+            }
+        }
+
+</script> 
+
+</head>
+<body>
+    <h1>자리배치 프로그램</h1>
+
+    <!--<button onclick="shuffleAndSplitData(data)">두 그룹으로 나누기</button>-->
+    
+    <h3>자료 : </h3>
+    
+    <p> 강원준, 김건우, 김서윤, 김연진, 김윤진, 김은우, 김창우, 도소윤, 문승언, 박지안, 손이현, 심지호, 윤은빈, 이서윤, 이서준, 이수호, 이예나, 임지우, 장유정, 전현수, 정은재, 조시현, 최수연, 최현태, 추서윤, 한지윤, 이예람, 최가윤</p>
+
+    <p>A1~A14 : <input id="nam1" type="text"></p>
     <p>B1~B14 : <input id="nam2" type="text"></p>
 
     <p id="countdown"></p>

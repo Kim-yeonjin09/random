@@ -108,24 +108,24 @@
             }
         }
         function countdown2(callback) {
-            var count = 3; // 시작 카운트다운 값
+            var count2 = 3; // 시작 카운트다운 값
             var countdown2Element = document.getElementById("countdown2");
 
             var timer = setInterval(function() {
                 countdown2Element.textContent = count;
                 count--;
 
-                if (count < 0) {
+                if (count2 < 0) {
                 clearInterval(timer);
                 callback()
                  }
             }, 1000);
         }
         function checkCheckbox2() {
-            var checkbox = document.getElementById("myCheckbox2");
+            var checkbox2 = document.getElementById("myCheckbox2");
             var resultElement = document.getElementById("result2");
 
-            if (checkbox.checked) {
+            if (checkbox2.checked) {
                 countdown(updateSeatText2)
 
             } else {

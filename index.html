@@ -108,12 +108,12 @@
             }
         }
         function countdown2(callback) {
-            var count2 = 3; // 시작 카운트다운 값
-            var countdownElement = document.getElementById("countdown2");
+            var count = 3; // 시작 카운트다운 값
+            var countdown2Element = document.getElementById("countdown2");
 
             var timer = setInterval(function() {
-                countdownElement.textContent = count2;
-                count2--;
+                countdown2Element.textContent = count;
+                count--;
 
                 if (count < 0) {
                 clearInterval(timer);
